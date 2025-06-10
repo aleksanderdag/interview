@@ -1,7 +1,10 @@
-package org.example.Cheatsheets.Functions.TwoIndices.OneCollection;
+package org.example.DS;
 
-public class Accessor {
-    public static IAccessor<Character> fromString(String str) {
+public interface IAccessor<T> {
+    T get(int index);
+    int size();
+
+    static IAccessor<Character> fromString(String str) {
         return new IAccessor<>() {
             @Override
             public Character get(int index) {
@@ -15,8 +18,8 @@ public class Accessor {
         };
     }
 
-    public static IAccessor<Integer> fromIntArray(int[] arr) {
-        return new IAccessor<Integer>() {
+    static IAccessor<Integer> fromIntArray(int[] arr) {
+        return new IAccessor<>() {
             @Override
             public Integer get(int index) {
                 return arr[index];

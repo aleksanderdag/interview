@@ -1,121 +1,109 @@
 package org.example.DSA;
 
+import org.example.Cheatsheets.Functions.FixedWindowSolver;
+import org.example.Cheatsheets.Functions.SlidingWindowSolver;
+import org.example.DS.IAccessor;
+
+import static org.example.DS.IAccessor.fromIntArray;
+
 public class SlidingWindow {
     public int findLength(int[] nums, int k) {
-        var myState = new org.example.Cheatsheets.Functions.SlidingWindow() {
-            int ans = 0;
-            int curr = 0;
-
+        var test = new SlidingWindowSolver<Integer, Integer, Integer>(0,0) {
             @Override
-            public void addRight(int rightIndex) {
-                curr += nums[rightIndex];
+            protected void extendRight(Integer val, int rightIndex) {
+                this.curr += val;
             }
 
             @Override
-            public void removeLeft(int leftIndex) {
-                curr -= nums[leftIndex];
+            protected void contractLeft(Integer val, int leftIndex) {
+                this.curr -= val;
             }
 
             @Override
-            public boolean windowConditionBroken(int leftIndex, int rightIndex) {
-                return curr > k;
+            protected boolean windowConditionBroken(int leftIndex, int rightIndex) {
+                return this.curr > k;
             }
 
             @Override
-            public void validWindow(int leftIndex, int rightIndex) {
-                ans = Math.max(ans, rightIndex - leftIndex + 1);
+            protected void updateAnswer(int leftIndex, int rightIndex) {
+                this.ans = Math.max(this.ans, rightIndex - leftIndex + 1);
             }
         };
-        myState.run(nums.length);
 
-        return myState.ans;
+        return test.solve(fromIntArray(nums));
     }
 
     public int findLength(String s) {
-        var myState = new org.example.Cheatsheets.Functions.SlidingWindow() {
-            int ans = 0;
-            int zeroCount = 0;
-
+        var test = new SlidingWindowSolver<Character, Integer, Integer>(0, 0) {
             @Override
-            public void addRight(int rightIndex) {
-                if(s.charAt(rightIndex) == '0') zeroCount++;
+            protected void extendRight(Character val, int rightIndex) {
+                if(val.equals('0')) this.curr++;
             }
 
             @Override
-            public void removeLeft(int leftIndex) {
-                if(s.charAt(leftIndex) == '0') zeroCount--;
+            protected void contractLeft(Character val, int leftIndex) {
+                if(val.equals('0')) this.curr--;
             }
 
             @Override
-            public boolean windowConditionBroken(int leftIndex, int rightIndex) {
-                return zeroCount > 1;
+            protected boolean windowConditionBroken(int leftIndex, int rightIndex) {
+                return this.curr > 1;
             }
 
             @Override
-            public void validWindow(int leftIndex, int rightIndex) {
-                ans = Math.max(ans, rightIndex - leftIndex + 1);
+            protected void updateAnswer(int leftIndex, int rightIndex) {
+                this.ans = Math.max(this.ans, rightIndex - leftIndex  + 1);
             }
         };
-        myState.run(s.length());
-        return myState.ans;
+
+        return test.solve(IAccessor.fromString(s));
     }
 
     public int numSubarrayProductLessThanK(int[] nums, int k) {
-        var myState = new org.example.Cheatsheets.Functions.SlidingWindow() {
-            int ans = 0;
-            int curr = 1;
-
+        var test = new SlidingWindowSolver<Integer, Integer, Integer>(0, 1) {
             @Override
-            public void addRight(int rightIndex) {
-                curr *= nums[rightIndex];
+            protected void extendRight(Integer val, int rightIndex) {
+                curr *= val;
             }
 
             @Override
-            public void removeLeft(int leftIndex) {
-                curr /= nums[leftIndex];
+            protected void contractLeft(Integer val, int leftIndex) {
+                curr /= val;
             }
 
             @Override
-            public boolean windowConditionBroken(int leftIndex, int rightIndex) {
+            protected boolean windowConditionBroken(int leftIndex, int rightIndex) {
                 return curr >= k;
             }
 
             @Override
-            public void validWindow(int leftIndex, int rightIndex) {
-                ans += rightIndex - leftIndex + 1;
+            protected void updateAnswer(int leftIndex, int rightIndex) {
+                ans +=  rightIndex - leftIndex + 1;
             }
         };
-        myState.run(nums.length);
-        return myState.ans;
+
+        return test.solve(fromIntArray(nums));
     }
 
-    public int findBestSubarray(int[] nums, int k) { // TODO: add class for fixed windows
-        var myState = new org.example.Cheatsheets.Functions.SlidingWindow() {
-            int ans = 0, curr = 0, size = 0;
-
+    public int findBestSubarray(int[] nums, int k) {
+        var test = new FixedWindowSolver<Integer, Integer, Integer>(k, 0, 0) {
             @Override
-            public void addRight(int rightIndex) {
-                curr += nums[rightIndex];
-                size++;
+            protected void buildingWindow(Integer val, int rightIndex) {
+                this.curr += val;
             }
 
             @Override
-            public void removeLeft(int leftIndex) {
-                curr -= nums[leftIndex];
-                size--;
+            protected void windowBuilt() {
+                this.ans = this.curr;
             }
 
             @Override
-            public boolean windowConditionBroken(int leftIndex, int rightIndex) {
-                return size > k;
-            }
-
-            @Override
-            public void validWindow(int leftIndex, int rightIndex) {
-                ans = Math.max(ans, curr);
+            protected void movingWindow(Integer excludedVal, int leftIndex, Integer includedVal, int rightIndex) {
+                this.curr += includedVal - excludedVal;
+                this.ans = Math.max(this.ans, this.curr);
             }
         };
-        myState.run(nums.length);
-        return myState.ans;
+
+        return test.solve(fromIntArray(nums));
     }
 }

@@ -19,14 +19,6 @@ class TwoPointersTest {
 
     final TwoPointers OBJ = new TwoPointers();
 
-//    @BeforeEach
-//    void setUp() {
-//    }
-
-//    @AfterEach
-//    void tearDown() {
-//    }
-
     @ParameterizedTest
     @CsvSource({"abcdcba, true", "racecar, true", "palindrome, false"})
     void checkIfPalindromeTest(String s, boolean isPalindrome) {
@@ -47,18 +39,16 @@ class TwoPointersTest {
         assertEquals(hasTarget, OBJ.checkForTarget(nums,target));
     }
 
-//    @Test
-//    void combine() {
-//        List<Integer> thing = Arrays.asList(1, 3, 4, 5, 6, 7, 20);
-////        var thing = new Integer[]{1, 3, 4, 5, 6, 7, 20};
-//        assertIterableEquals(thing,
-//                OBJ.combine(new int[]{1, 4, 7, 20}, new int[]{3, 5, 6}));
-//    }
-
     @Test
-    void isSubsequence() {
-        assertTrue(OBJ.isSubsequence("ace", "abcde"));
-        assertFalse(OBJ.isSubsequence("aec", "abcde"));
-        assertTrue(OBJ.isSubsequence("bc", "abcd"));
+    void combine() {
+        var thing = Arrays.asList(1, 3, 4, 5, 6, 7, 20);
+        assertIterableEquals(thing,
+                OBJ.combine(new int[]{1, 4, 7, 20}, new int[]{3, 5, 6}));
+    }
+
+    @ParameterizedTest
+    @CsvSource({"ace, abcde, true", "aec, abcde, false", "bc, abcd, true"})
+    void isSubsequence(String s, String t, boolean isSub) {
+        assertEquals(isSub, OBJ.isSubsequence(s, t));
     }
 }

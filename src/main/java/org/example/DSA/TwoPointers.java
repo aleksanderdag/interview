@@ -1,16 +1,20 @@
 package org.example.DSA;
 
-import org.example.Cheatsheets.Functions.TwoIndices.OneCollection.Accessor;
-import org.example.Cheatsheets.Functions.TwoIndices.OneCollection.PointerDecision;
-import org.example.Cheatsheets.Functions.TwoIndices.OneCollection.TwoPointerSolver;
-import org.example.DS.List.Pair;
-import org.example.Cheatsheets.Functions.TwoIndices.TwoCollections.ConditionalIndex;
+import org.example.Cheatsheets.Functions.TwoIndices.PointerDecision;
+import org.example.Cheatsheets.Functions.TwoIndices.TwoPointerSolver;
+import org.example.Cheatsheets.Functions.TwoIndices.TailDecision;
+import org.example.Cheatsheets.Functions.TwoIndices.DualPointerSolver;
+import org.example.Cheatsheets.JavaMethodFlattener;
+import org.example.DS.IAccessor;
 
-import static org.example.Cheatsheets.Functions.TwoIndices.OneCollection.PointerDecision.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.example.Cheatsheets.Functions.TwoIndices.PointerDecision.*;
 
 public class TwoPointers {
     public boolean checkIfPalindrome(String s) {
-        TwoPointerSolver<Character, Boolean> palindrome = new TwoPointerSolver<>() {
+        class myClass extends TwoPointerSolver<Character, Boolean> {
             @Override
             protected Boolean initialAns() {
                 return true;
@@ -19,18 +23,19 @@ public class TwoPointers {
             @Override
             protected PointerDecision<Boolean> doLogic(Character leftVal, Character rightVal, int LeftIndex, int rightIndex, Boolean currentAns) {
                 if(leftVal.equals(rightVal)) {
-                    return new PointerDecision<>(true, true, currentAns);
+                    return symmetricMove(currentAns);
                 } else {
                     return ret(false);
                 }
             }
-        };
+        }
 
-        return palindrome.solve(Accessor.fromString(s));
+        var palindrome = new myClass();
+        return palindrome.solve(IAccessor.fromString(s));
     }
 
     public boolean checkForTarget(int[] nums, int target) {
-        TwoPointerSolver<Integer, Boolean> test = new TwoPointerSolver<>() {
+        var test = new TwoPointerSolver<Integer, Boolean>() {
             @Override
             protected Boolean initialAns() {
                 return false;
@@ -38,7 +43,7 @@ public class TwoPointers {
 
             @Override
             protected PointerDecision<Boolean> doLogic(Integer leftVal, Integer rightVal, int LeftIndex, int rightIndex, Boolean currentAns) {
-                int total = leftVal + rightVal;
+                var total = leftVal + rightVal;
                 if (total == target) {
                     return ret(true);
                 } else if (total < target) {
@@ -49,65 +54,71 @@ public class TwoPointers {
             }
         };
 
-        return test.solve(Accessor.fromIntArray(nums));
+        return test.solve(IAccessor.fromIntArray(nums));
     }
 
-//    public java.util.List<Integer> combine(int[] arr1, int[] arr2) {
-//        var collection1 = new IndexableIntArray(arr1);
-//        var items1 = collection1.iterator();
-//        var collection2 = new IndexableIntArray(arr1);
-//        var items2 = collection2.iterator();
-//        var items = new CombineIterator<>(items1, items2);
-//
-//        for(var elem : items) {
-//
-//        }
-//
-//        return
-//
-////        var myState = new ExhaustBoth(arr1.length, arr2.length) {
-////            java.util.List<Integer> state = new ArrayList<>();
-////
-////            @Override
-////            public boolean condition(int i, int j) {
-////                return arr1[i] < arr2[j];
-////            }
-////
-////            @Override
-////            public Pair<Integer, Integer> trueSelector(int i, int j) {
-////                state.add(arr1[i]);
-////                return new Pair<>(i + 1, j);
-////            }
-////
-////            @Override
-////            public Pair<Integer, Integer> falseSelector(int i, int j) {
-////                state.add(arr2[j]);
-////                return new Pair<>(i, j + 1);
-////            }
-////        };
-////        myState.run(0,0);
-////        return myState.state;
-//    }
-
-    public boolean isSubsequence(String s, String t) {
-        var myState = new ConditionalIndex(s.length(), t.length()) {
+    public java.util.List<Integer> combine(int[] arr1, int[] arr2) {
+        DualPointerSolver<Integer, Integer, List<Integer>> test = new DualPointerSolver<>() {
             @Override
-            public boolean condition(int i, int j) {
-                return s.charAt(i) == t.charAt(j);
+            protected List<Integer> initialAns() {
+                return new ArrayList<>();
             }
 
             @Override
-            public Pair<Integer, Integer> trueSelector(int i, int j) {
-                return new Pair<>(i + 1, j + 1);
+            protected PointerDecision<List<Integer>> doLogic(Integer a, Integer b, int i, int j, List<Integer> currentAns) {
+                if (a <= b) {
+                    currentAns.add(a);
+                    return moveLeft(currentAns);
+                } else {
+                    currentAns.add(b);
+                    return moveRight(currentAns);
+                }
             }
 
             @Override
-            public Pair<Integer, Integer> falseSelector(int i, int j) {
-                return new Pair<>(i, j + 1);
+            protected TailDecision<List<Integer>> tailLeft(Integer a, int i, List<Integer> currentAns) {
+                currentAns.add(a);
+                return TailDecision.cont(currentAns);
+            }
+
+            @Override
+            protected TailDecision<List<Integer>> tailRight(Integer b, int j, List<Integer> currentAns) {
+                currentAns.add(b);
+                return TailDecision.cont(currentAns);
             }
         };
 
-        return myState.run(0, 0).left() == s.length();
+        return test.solve(IAccessor.fromIntArray(arr1), IAccessor.fromIntArray(arr2));
+    }
+
+    public boolean isSubsequence(String s, String t) {
+        var test = new DualPointerSolver<Character, Character, Boolean>() {
+            @Override
+            protected Boolean initialAns() {
+                return true;
+            }
+
+            @Override
+            protected PointerDecision<Boolean> doLogic(Character a, Character b, int i, int j, Boolean currentAns) {
+                if (a == b) {
+                    return symmetricMove(currentAns);
+                } else {
+                    return moveRight(currentAns);
+                }
+            }
+
+            @Override
+            protected TailDecision<Boolean> tailLeft(Character a, int i, Boolean currentAns) {
+                return TailDecision.ret(false);
+            }
+
+            @Override
+            protected TailDecision<Boolean> tailRight(Character b, int j, Boolean currentAns) {
+                return TailDecision.ret(true);
+            }
+        };
+
+        return test.solve(IAccessor.fromString(s), IAccessor.fromString(t));
     }
 
 }

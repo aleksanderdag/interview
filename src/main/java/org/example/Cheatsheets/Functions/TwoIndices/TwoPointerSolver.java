@@ -1,4 +1,6 @@
-package org.example.Cheatsheets.Functions.TwoIndices.OneCollection;
+package org.example.Cheatsheets.Functions.TwoIndices;
+
+import org.example.DS.IAccessor;
 
 public abstract class TwoPointerSolver<T, R> {
     protected abstract R initialAns();
