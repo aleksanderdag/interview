@@ -1,4 +1,4 @@
-package org.example.Cheatsheets.Functions.TwoIndices;
+package org.example.Cheatsheets.Solver.TwoIndices;
 
 public record TailDecision<R>(boolean stopEarly, R updatedAns) {
     public static <R> TailDecision<R> cont(R ans) {

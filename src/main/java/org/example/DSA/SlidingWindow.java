@@ -1,10 +1,10 @@
 package org.example.DSA;
 
-import org.example.Cheatsheets.Functions.FixedWindowSolver;
-import org.example.Cheatsheets.Functions.SlidingWindowSolver;
-import org.example.DS.IAccessor;
+import org.example.Cheatsheets.Solver.Window.FixedWindowSolver;
+import org.example.Cheatsheets.Solver.Window.SlidingWindowSolver;
+import org.example.DS.Array.Accessor;
 
-import static org.example.DS.IAccessor.fromIntArray;
+import static org.example.DS.Array.Mutable.fromIntArray;
 
 public class SlidingWindow {
     public int findLength(int[] nums, int k) {
@@ -56,7 +56,7 @@ public class SlidingWindow {
             }
         };
 
-        return test.solve(IAccessor.fromString(s));
+        return test.solve(Accessor.fromString(s));
     }
 
     public int numSubarrayProductLessThanK(int[] nums, int k) {

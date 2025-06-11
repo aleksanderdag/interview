@@ -1,124 +1,119 @@
 package org.example.DSA;
 
-import org.example.Cheatsheets.Functions.TwoIndices.PointerDecision;
-import org.example.Cheatsheets.Functions.TwoIndices.TwoPointerSolver;
-import org.example.Cheatsheets.Functions.TwoIndices.TailDecision;
-import org.example.Cheatsheets.Functions.TwoIndices.DualPointerSolver;
-import org.example.Cheatsheets.JavaMethodFlattener;
-import org.example.DS.IAccessor;
+import org.example.Cheatsheets.Solver.TwoIndices.PointerDecision;
+import org.example.Cheatsheets.Solver.TwoIndices.OppositeEndsSolver;
+import org.example.Cheatsheets.Solver.TwoIndices.TailDecision;
+import org.example.Cheatsheets.Solver.TwoIndices.ExhaustInputsSolver;
+import org.example.DS.Array.Accessor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.Cheatsheets.Functions.TwoIndices.PointerDecision.*;
+import static org.example.Cheatsheets.Solver.TwoIndices.PointerDecision.*;
+import static org.example.DS.Array.Mutable.fromIntArray;
 
 public class TwoPointers {
     public boolean checkIfPalindrome(String s) {
-        class myClass extends TwoPointerSolver<Character, Boolean> {
-            @Override
-            protected Boolean initialAns() {
-                return true;
-            }
+        class myClass extends OppositeEndsSolver<Character> {
+            boolean ans = true;
 
             @Override
-            protected PointerDecision<Boolean> doLogic(Character leftVal, Character rightVal, int LeftIndex, int rightIndex, Boolean currentAns) {
+            protected PointerDecision<Boolean> doLogic(Character leftVal, Character rightVal, int LeftIndex, int rightIndex) {
                 if(leftVal.equals(rightVal)) {
-                    return symmetricMove(currentAns);
+                    return symmetricMove(null);
                 } else {
+                    this.ans = false;
                     return ret(false);
                 }
             }
         }
 
         var palindrome = new myClass();
-        return palindrome.solve(IAccessor.fromString(s));
+        palindrome.solve(Accessor.fromString(s));
+        return palindrome.ans;
     }
 
     public boolean checkForTarget(int[] nums, int target) {
-        var test = new TwoPointerSolver<Integer, Boolean>() {
-            @Override
-            protected Boolean initialAns() {
-                return false;
-            }
+        var test = new OppositeEndsSolver<Integer>() {
+            boolean ans = false;
 
             @Override
-            protected PointerDecision<Boolean> doLogic(Integer leftVal, Integer rightVal, int LeftIndex, int rightIndex, Boolean currentAns) {
+            protected PointerDecision<Boolean> doLogic(Integer leftVal, Integer rightVal, int LeftIndex, int rightIndex) {
                 var total = leftVal + rightVal;
                 if (total == target) {
+                    this.ans = true;
                     return ret(true);
                 } else if (total < target) {
-                    return moveLeft(currentAns);
+                    return moveLeft(null);
                 } else {
-                    return moveRight(currentAns);
+                    return moveRight(null);
                 }
             }
         };
 
-        return test.solve(IAccessor.fromIntArray(nums));
+        test.solve(fromIntArray(nums));
+        return test.ans;
     }
 
     public java.util.List<Integer> combine(int[] arr1, int[] arr2) {
-        DualPointerSolver<Integer, Integer, List<Integer>> test = new DualPointerSolver<>() {
-            @Override
-            protected List<Integer> initialAns() {
-                return new ArrayList<>();
-            }
+        var test = new ExhaustInputsSolver<Integer, Integer>() {
+            public final List<Integer> ans = new ArrayList<>();
 
             @Override
-            protected PointerDecision<List<Integer>> doLogic(Integer a, Integer b, int i, int j, List<Integer> currentAns) {
+            protected PointerDecision<List<Integer>> doLogic(Integer a, Integer b, int i, int j) {
                 if (a <= b) {
-                    currentAns.add(a);
-                    return moveLeft(currentAns);
+                    ans.add(a);
+                    return moveLeft(null);
                 } else {
-                    currentAns.add(b);
-                    return moveRight(currentAns);
+                    ans.add(b);
+                    return moveRight(null);
                 }
             }
 
             @Override
-            protected TailDecision<List<Integer>> tailLeft(Integer a, int i, List<Integer> currentAns) {
-                currentAns.add(a);
-                return TailDecision.cont(currentAns);
+            protected TailDecision<List<Integer>> tailLeft(Integer a, int i) {
+                ans.add(a);
+                return TailDecision.cont(null);
             }
 
             @Override
-            protected TailDecision<List<Integer>> tailRight(Integer b, int j, List<Integer> currentAns) {
-                currentAns.add(b);
-                return TailDecision.cont(currentAns);
+            protected TailDecision<List<Integer>> tailRight(Integer b, int j) {
+                ans.add(b);
+                return TailDecision.cont(null);
             }
         };
 
-        return test.solve(IAccessor.fromIntArray(arr1), IAccessor.fromIntArray(arr2));
+        test.solve(fromIntArray(arr1), fromIntArray(arr2));
+        return test.ans;
     }
 
     public boolean isSubsequence(String s, String t) {
-        var test = new DualPointerSolver<Character, Character, Boolean>() {
-            @Override
-            protected Boolean initialAns() {
-                return true;
-            }
+        var test = new ExhaustInputsSolver<Character, Character>() {
+            boolean ans = true;
 
             @Override
-            protected PointerDecision<Boolean> doLogic(Character a, Character b, int i, int j, Boolean currentAns) {
+            protected PointerDecision<?> doLogic(Character a, Character b, int i, int j) {
                 if (a == b) {
-                    return symmetricMove(currentAns);
+                    return symmetricMove(null);
                 } else {
-                    return moveRight(currentAns);
+                    return moveRight(null);
                 }
             }
 
             @Override
-            protected TailDecision<Boolean> tailLeft(Character a, int i, Boolean currentAns) {
-                return TailDecision.ret(false);
+            protected TailDecision<?> tailLeft(Character a, int i) {
+                ans = false;
+                return TailDecision.ret(null);
             }
 
             @Override
-            protected TailDecision<Boolean> tailRight(Character b, int j, Boolean currentAns) {
-                return TailDecision.ret(true);
+            protected TailDecision<?> tailRight(Character b, int j) {
+                return TailDecision.ret(null);
             }
         };
 
-        return test.solve(IAccessor.fromString(s), IAccessor.fromString(t));
+        test.solve(Accessor.fromString(s), Accessor.fromString(t));
+        return test.ans;
     }
 
 }

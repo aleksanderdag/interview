@@ -1,6 +1,6 @@
-package org.example.Cheatsheets.Functions;
+package org.example.Cheatsheets.Solver.Window;
 
-import org.example.DS.IAccessor;
+import org.example.DS.Array.Accessor;
 
 public abstract class SlidingWindowSolver<T, C, R> {
     public R ans;
@@ -31,8 +31,8 @@ public abstract class SlidingWindowSolver<T, C, R> {
     // Called when updating the answer with the current window state
     protected abstract void updateAnswer(int leftIndex, int rightIndex);
 
-    public R solve(IAccessor<T> arr) {
-        int left = 0;
+    public R solve(Accessor<T> arr) {
+        var left = 0;
 
         for (int right = 0; right < arr.size(); right++) {
             extendRight(arr.get(right), right);

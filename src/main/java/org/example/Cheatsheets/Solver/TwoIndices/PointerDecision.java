@@ -1,4 +1,4 @@
-package org.example.Cheatsheets.Functions.TwoIndices;
+package org.example.Cheatsheets.Solver.TwoIndices;
 
 public record PointerDecision<R>(
         boolean stopEarly,

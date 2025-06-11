@@ -1,6 +1,6 @@
-package org.example.Cheatsheets.Functions;
+package org.example.Cheatsheets.Solver.Window;
 
-import org.example.DS.IAccessor;
+import org.example.DS.Array.Accessor;
 
 public abstract class FixedWindowSolver<T, C, R> {
     public R ans;
@@ -25,7 +25,7 @@ public abstract class FixedWindowSolver<T, C, R> {
     protected abstract void windowBuilt();
     protected abstract void movingWindow(T excludedVal, int leftIndex, T includedVal, int rightIndex);
 
-    public R solve(IAccessor<T> arr) {
+    public R solve(Accessor<T> arr) {
         // build the first window
         for (int i = 0; i < k; i++) {
             buildingWindow(arr.get(i), i);
