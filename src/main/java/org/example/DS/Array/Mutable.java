@@ -4,11 +4,11 @@ import java.util.function.Consumer;
 
 public interface Mutable<T> extends Accessor<T> {
     void set(int index, T value);
-    Mutable<T> newInstance(int size);
     void forEach(Consumer<T> function);
     void add(T val);
+    Mutable<T> newInstance(int size);
 
-    static MutableIntArray fromIntArray(int[] arr) {
-        return new MutableIntArray(arr);
+    static IntArray fromIntArray(int[] arr) {
+        return new IntArray(arr);
     }
 }

@@ -8,7 +8,10 @@ import static org.example.DS.Array.Mutable.fromIntArray;
 
 public class SlidingWindow {
     public int findLength(int[] nums, int k) {
-        var test = new SlidingWindowSolver<Integer, Integer, Integer>(0,0) {
+        var test = new SlidingWindowSolver<Integer>() {
+            int ans = 0;
+            int curr = 0;
+
             @Override
             protected void extendRight(Integer val, int rightIndex) {
                 this.curr += val;
@@ -20,21 +23,25 @@ public class SlidingWindow {
             }
 
             @Override
-            protected boolean windowConditionBroken(int leftIndex, int rightIndex) {
+            protected boolean windowConditionBroken(Integer leftVal, Integer rightVal) {
                 return this.curr > k;
             }
 
             @Override
-            protected void updateAnswer(int leftIndex, int rightIndex) {
-                this.ans = Math.max(this.ans, rightIndex - leftIndex + 1);
+            protected void updateAnswer() {
+                this.ans = Math.max(this.ans, right - left + 1);
             }
         };
 
-        return test.solve(fromIntArray(nums));
+        test.solve(fromIntArray(nums));
+        return test.ans;
     }
 
     public int findLength(String s) {
-        var test = new SlidingWindowSolver<Character, Integer, Integer>(0, 0) {
+        var test = new SlidingWindowSolver<Character>() {
+            int ans = 0;
+            int curr = 0;
+
             @Override
             protected void extendRight(Character val, int rightIndex) {
                 if(val.equals('0')) this.curr++;
@@ -46,21 +53,25 @@ public class SlidingWindow {
             }
 
             @Override
-            protected boolean windowConditionBroken(int leftIndex, int rightIndex) {
+            protected boolean windowConditionBroken(Character leftVal, Character rightVal) {
                 return this.curr > 1;
             }
 
             @Override
-            protected void updateAnswer(int leftIndex, int rightIndex) {
-                this.ans = Math.max(this.ans, rightIndex - leftIndex  + 1);
+            protected void updateAnswer() {
+                this.ans = Math.max(this.ans, right - left  + 1);
             }
         };
 
-        return test.solve(Accessor.fromString(s));
+        test.solve(Accessor.fromString(s));
+        return test.ans;
     }
 
     public int numSubarrayProductLessThanK(int[] nums, int k) {
-        var test = new SlidingWindowSolver<Integer, Integer, Integer>(0, 1) {
+        var test = new SlidingWindowSolver<Integer>() {
+            int ans = 0;
+            int curr = 1;
+
             @Override
             protected void extendRight(Integer val, int rightIndex) {
                 curr *= val;
@@ -72,21 +83,25 @@ public class SlidingWindow {
             }
 
             @Override
-            protected boolean windowConditionBroken(int leftIndex, int rightIndex) {
+            protected boolean windowConditionBroken(Integer leftVal, Integer rightVal) {
                 return curr >= k;
             }
 
             @Override
-            protected void updateAnswer(int leftIndex, int rightIndex) {
-                ans +=  rightIndex - leftIndex + 1;
+            protected void updateAnswer() {
+                ans +=  right - left + 1;
             }
         };
 
-        return test.solve(fromIntArray(nums));
+        test.solve(fromIntArray(nums));
+        return test.ans;
     }
 
     public int findBestSubarray(int[] nums, int k) {
-        var test = new FixedWindowSolver<Integer, Integer, Integer>(k, 0, 0) {
+        var test = new FixedWindowSolver<Integer>() {
+            int ans = 0;
+            int curr = 0;
+
             @Override
             protected void buildingWindow(Integer val, int rightIndex) {
                 this.curr += val;
@@ -104,6 +119,8 @@ public class SlidingWindow {
             }
         };
 
-        return test.solve(fromIntArray(nums));
+        test.k = k;
+        test.solve(fromIntArray(nums));
+        return test.ans;
     }
 }

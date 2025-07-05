@@ -1,9 +1,11 @@
 package org.example.DSA.Array;
 
 import org.example.Cheatsheets.Solver.ForEachSolver;
+import org.example.Cheatsheets.Solver.ReverseSolver;
 import org.example.Cheatsheets.Solver.TwoIndices.ExhaustInputsSolver;
 import org.example.Cheatsheets.Solver.TwoIndices.PointerDecision;
 import org.example.Cheatsheets.Solver.TwoIndices.TailDecision;
+import org.example.DS.Array.IntArray;
 
 import java.util.Arrays;
 
@@ -14,17 +16,8 @@ import static org.example.DS.Array.Mutable.fromIntArray;
 
 public class Insert {
     public void duplicateZeros(int[] arr) {
-        var collection = fromIntArray(arr);
-        var original = collection.newInstance(collection.size());
-
-        var pretest = new ForEachSolver<Integer>() {
-            @Override
-            public void consume(Integer val) {
-                original.set(i, val);
-            }
-        };
-
-        pretest.solve(collection);
+        var collection = new IntArray(arr);
+        var original = collection.copy();
         collection.length = 0;
 
         var test = new ForEachSolver<Integer>() {
@@ -47,45 +40,21 @@ public class Insert {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         var collection = fromIntArray(nums1);
-        var original = collection.newInstance(collection.size());
-        collection.length = m;
+        var collection2 = fromIntArray(nums2);
+        collection2.length = n;
 
-        var pretest = new ForEachSolver<Integer>() {
+        var test = new ReverseSolver<Integer>() {
+            int j = m - 1;
+            int k = m+n-1;
+
             @Override
             public void consume(Integer val) {
-                original.add(val);
+                while (j>=0 && val < nums1[j]) collection.set(k--, nums1[j--]);
+                collection.set(k--, val);
             }
         };
 
-        pretest.solve(collection);
-        collection.length = 0;
-
-        var test = new ExhaustInputsSolver<Integer, Integer>() {
-            @Override
-            protected PointerDecision<?> doLogic(Integer leftVal, Integer rightVal, int i, int j) {
-                if (leftVal < rightVal) {
-                    collection.add(leftVal);
-                    return moveLeft(null);
-                } else {
-                    collection.add(rightVal);
-                    return moveRight(null);
-                }
-            }
-
-            @Override
-            protected TailDecision<?> tailLeft(Integer integer, int i) {
-                collection.add(integer);
-                return cont(null);
-            }
-
-            @Override
-            protected TailDecision<?> tailRight(Integer integer, int j) {
-                collection.add(integer);
-                return cont(null);
-            }
-        };
-
-        test.solve(original, fromIntArray(nums2));
+        test.solve(collection2);
         Arrays.stream(nums1).forEachOrdered(System.out::println);
     }
 }

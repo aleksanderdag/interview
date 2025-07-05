@@ -5,16 +5,6 @@ public interface Accessor<T> {
     int size();
 
     static Accessor<Character> fromString(String str) {
-        return new Accessor<>() {
-            @Override
-            public Character get(int index) {
-                return str.charAt(index);
-            }
-
-            @Override
-            public int size() {
-                return str.length();
-            }
-        };
+        return new StringArray(str);
     }
 }

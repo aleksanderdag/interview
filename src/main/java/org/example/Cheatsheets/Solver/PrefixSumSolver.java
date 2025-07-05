@@ -3,7 +3,7 @@ package org.example.Cheatsheets.Solver;
 import org.example.DS.Array.Mutable;
 
 public abstract class PrefixSumSolver<T> {
-    protected abstract T combine(T prevSum, T nextVal, int index);
+    protected abstract void combine(T prevSum, T nextVal, int index);
 
     public Mutable<T> solve(Mutable<T> arr) {
         var prefix = arr.newInstance(arr.size());
