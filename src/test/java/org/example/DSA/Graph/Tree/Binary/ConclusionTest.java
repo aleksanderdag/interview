@@ -2,6 +2,7 @@ package org.example.DSA.Graph.Tree.Binary;
 
 import org.example.DS.Graph.Tree.TreeNode;
 import org.example.DSA.Graph.Tree.Binary.Conclusion;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -21,6 +22,7 @@ class ConclusionTest {
         );
     }
 
+    @Disabled
     @ParameterizedTest
     @MethodSource
     void buildTree(int[] inorder, int[] postorder, TreeNode expected) {

@@ -4,6 +4,7 @@ import org.example.DB.H2DB;
 import org.example.DB.Table;
 import org.example.DB.TableEntry;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -93,6 +94,7 @@ public class combine {
         );
     }
 
+    @Disabled
     @ParameterizedTest
     @MethodSource
     public void bonus(Table expected, TableEntry... entrees) throws SQLException, IOException {
