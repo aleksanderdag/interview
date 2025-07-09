@@ -13,7 +13,7 @@ public abstract class SlidingWindowSolver<T> {
     protected abstract void contractLeft(T val, int leftIndex);
 
     // Condition that tells when the window is broken and left pointer should move forward
-    protected abstract boolean windowConditionBroken(T leftVal, T rightVal);
+    protected abstract boolean windowConditionBroken();
 
     // Called when updating the answer with the current window state
     protected abstract void updateAnswer();
@@ -22,7 +22,7 @@ public abstract class SlidingWindowSolver<T> {
         for (; right < arr.size(); right++) {
             extendRight(arr.get(right), right);
 
-            while (windowConditionBroken(arr.get(left), arr.get(right))) {
+            while (windowConditionBroken()) {
                 contractLeft(arr.get(left), left);
                 left++;
             }

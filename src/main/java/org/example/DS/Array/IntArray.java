@@ -79,6 +79,20 @@ public class IntArray implements Mutable<Integer> {
         length--;
     }
 
+    public int firstIndex(int element) {
+        if (arr == null || length == 0) {
+            return -1;
+        }
+
+        for (int i = 0; i < length; i++) {
+            if (arr[i] == element) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
     public boolean linearSearch(int element) {
         // Check for edge cases. Is the array null or empty?
         // If it is, then we return false because the element we're

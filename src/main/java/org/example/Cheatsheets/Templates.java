@@ -1,7 +1,5 @@
 package org.example.Cheatsheets;
 
-import org.example.DS.List.Indexable.Indexable;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -20,8 +18,8 @@ public abstract class Templates {
     /*
      * Traverse an array from opposite sides, moving left on condition, else right.
      */
-    public int oppositeEnds(Indexable<?> arr) {
-        int left = 0, right = arr.size() - 1, ans = 0;
+    public int oppositeEnds(int[] arr) {
+        int left = 0, right = arr.length - 1, ans = 0;
 
         while (left < right) {
             // TODO: add ans function; and short-circuit
