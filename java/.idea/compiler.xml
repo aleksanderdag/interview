@@ -9,5 +9,8 @@
         <module name="interview" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="maven" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3cdeea49-f1e7-4cc9-a062-72eb9ed8881b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/interview.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/line10/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/line10/line10.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/phoneNumbers.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/transpose/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/transpose/transpose.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/JavaMethodFlattener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/ForEachSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/PrefixSumSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/ReverseSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/TreeNode/BFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/TreeNode/DFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/TreeNode/DFSIterative.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/TwoIndices/ExhaustInputsSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/TwoIndices/OppositeEndsSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/TwoIndices/PointerDecision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/TwoIndices/TailDecision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/Window/FixedWindowSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Solver/Window/SlidingWindowSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cheatsheets/Templates.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DB/H2DB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DB/Table.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DB/TableEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DB/TextFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/Components/ComponentMask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/Components/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/Components/Rendering.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/Components/Velocity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/EntityManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/GameContainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/Systems/ISystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Architectural/ECS/Systems/SystemManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Memento/Caretaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Memento/Memento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Memento/Originator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Observer/EventSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Observer/Observer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Observer/ObserverDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/State/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/State/State.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/State/TVContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Strategy/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Strategy/CarExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Strategy/IBrakeBehavior.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Strategy/SUV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Behavioral/Strategy/Sedan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Concurrency/ActiveObject/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Concurrency/ActiveObject/MyClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/Direction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/Door.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/MapSite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/Maze.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/MazeFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/MazeGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/AbstractFactory/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/FactoryMethod/MagicMazeGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/FactoryMethod/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/FactoryMethod/MazeGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/FactoryMethod/OrdinaryMazeGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/FactoryMethod/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/SimpleFactory/CeilingFan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/SimpleFactory/ExhaustFan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/SimpleFactory/FanType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/SimpleFactory/IFan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/SimpleFactory/IFanFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/SimpleFactory/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Factory/SimpleFactory/TableFan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Creational/Singleton/Singleton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Other/NullObject/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Other/NullObject/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Adapter/AdapterDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Adapter/ILightningPhone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Adapter/IMicroUsbPhone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Adapter/LightningToMicroUsbAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Composite/Chassis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Composite/CompositeEquipment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Composite/Equipment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Composite/FloppyDisk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Composite/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Coffee/Coffee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Coffee/CoffeeDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Coffee/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Coffee/WithMilk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Coffee/WithSprinkles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Windows/DecoratedWindowTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Windows/HorizontalScrollBarDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Windows/VerticalScrollBarDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Windows/Window.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Decorator/Windows/WindowDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Flyweight/Flyweight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Flyweight/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Flyweight/MyObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DP/Structural/Flyweight/Pointer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Array/Accessor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Array/IntArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Array/Mutable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Array/StringArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Concurrency/Foo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Graph/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Graph/Tree/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Graph/Tree/TreeNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/List/ListNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DS/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/Conclusion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/D1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/D2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/Delete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/InPlace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/Insert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/Intro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/SlidingWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Array/TwoPointers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/DS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Graph/Tree/Binary/Conclusion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Graph/Tree/Binary/Recurse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Graph/Tree/Binary/Traverse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DSA/Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FunctionsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManOrBoy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Quine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TPK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DB/SQL/combine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DP/Structural/Decorator/Windows/WindowDecoratorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DS/Concurrency/FooTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/ConclusionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/D1Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/DeleteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/InPlaceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/InsertTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/IntroTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/SearchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/SlidingWindowTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Array/TwoPointersTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/DSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Graph/Tree/Binary/ConclusionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Graph/Tree/Binary/RecurseTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DSA/Graph/Tree/Binary/TraverseTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Other/BashTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org/example/DB/SQL/Bonus.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org/example/DB/SQL/Combine2.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "aleksanderdag"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/aleksanderdag/interview.git",
+    "accountId": "5e4f64d8-ee35-4157-8de6-5628cf74a5c6"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2zhbFBVwlynCM2RZ3WUPHwLIZ50" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/aleksanderstenstad/code/monorepo/interview"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3cdeea49-f1e7-4cc9-a062-72eb9ed8881b" name="Changes" comment="" />
+      <created>1752186145569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752186145569</updated>
+    </task>
+    <servers />
+  </component>
+</project>
