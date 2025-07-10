@@ -1,10 +1,9 @@
-package org.example.DB.sql;
+package org.example.DB.SQL;
 
 import org.example.DB.H2DB;
 import org.example.DB.Table;
 import org.example.DB.TableEntry;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -25,31 +24,28 @@ public class combine {
     }
 
     public static Stream<Arguments> combine2() {
-        return Stream.of(
-                Arguments.of(
-                        new Table("""
-                                | firstName | lastName | city          | state    |
-                                | --------- | -------- | ------------- | -------- |
-                                | Allen     | Wang     | null          | null     |
-                                | Bob       | Alice    | New York City | New York |
-                                """),
-                        new TableEntry[] {
-                                new TableEntry("Person",
-                                        new Table("""
-                                | personId | lastName | firstName |
-                                | -------- | -------- | --------- |
-                                | 1        | Wang     | Allen     |
-                                | 2        | Alice    | Bob       |
-                                """)),
-                                new TableEntry("Address",
-                                        new Table("""
-                                | addressId | personId | city          | state      |
-                                | --------- | -------- | ------------- | ---------- |
-                                | 1         | 2        | New York City | New York   |
-                                | 2         | 3        | Leetcode      | California |
-                                """))
-                        }
-                )
+        return Stream.of(Arguments.of(
+                new Table("""
+                        | firstName | lastName | city          | state    |
+                        | --------- | -------- | ------------- | -------- |
+                        | Allen     | Wang     | null          | null     |
+                        | Bob       | Alice    | New York City | New York |
+                        """
+                ),
+                new TableEntry[] {
+                        new TableEntry("Person", new Table("""
+                        | personId | lastName | firstName |
+                        | -------- | -------- | --------- |
+                        | 1        | Wang     | Allen     |
+                        | 2        | Alice    | Bob       |
+                        """)),
+                        new TableEntry("Address", new Table("""
+                        | addressId | personId | city          | state      |
+                        | --------- | -------- | ------------- | ---------- |
+                        | 1         | 2        | New York City | New York   |
+                        | 2         | 3        | Leetcode      | California |
+                        """))
+                })
         );
     }
 
@@ -94,7 +90,6 @@ public class combine {
         );
     }
 
-    @Disabled
     @ParameterizedTest
     @MethodSource
     public void bonus(Table expected, TableEntry... entrees) throws SQLException, IOException {

@@ -7,12 +7,12 @@ import org.example.DS.Array.Accessor;
 import static org.example.DS.Array.Mutable.fromIntArray;
 
 public class SlidingWindow {
-    /***
-     * find the length of the longest subarray whose sum is less than or equal to k
+    /**
+     * Finds the length of the longest subarray whose sum is less than or equal to {@code k}.
      *
      * @param nums  an array of positive integers
      * @param k     an integer
-     * @return  the length of the longest subarray whose sum is less than or equal to k
+     * @return      the length of the longest subarray
      */
     public int findLength(int[] nums, int k) {
         var test = new SlidingWindowSolver<Integer>() {
