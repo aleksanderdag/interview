@@ -1,4 +1,4 @@
-package org.example.Other.Bash;
+package org.example.Other;
 
 import org.example.DB.TextFile;
 import org.junit.jupiter.api.Disabled;
